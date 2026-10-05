@@ -7,7 +7,7 @@
 <meta name="description" content="Mykola Makhovyk, Senior QA with six years on live consumer products at Epic Games (Fortnite) and Ubisoft (Anno 1800). Experience, projects, skills and CV.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mykola Makhovyk · Senior QA">
-<meta property="og:description" content="Six years of QA on live consumer products at Epic Games (Fortnite) and Ubisoft (Anno 1800). Shipped every owned feature without a critical or blocking issue.">
+<meta property="og:description" content="Six years of QA on live consumer products at Epic Games (Fortnite) and Ubisoft (Anno 1800). No owned feature shipped with a critical or blocking issue.">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111315'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='ui-monospace,Menlo,monospace' font-size='36' font-weight='700' fill='%233DD6E8'%3E%26gt;_%3C/text%3E%3C/svg%3E">
 
@@ -198,7 +198,7 @@
 
   .run-bullets > li{ position: relative; padding-left: 1.25em; }
   .run-bullets > li::before{
-    content: '▸'; position: absolute; left: 0; top: 0; color: var(--accent-text); font-size: .85em;
+    content: '▸'; position: absolute; left: 0; top: .05em; color: var(--accent-text); font-size: .9em; font-weight: 600;
   }
   details.run[open] .chev{ transform: rotate(180deg); }
   .chev{ transition: transform .2s ease; }
@@ -489,10 +489,17 @@
   .gv-qmeta{ font: 500 13px var(--g-display); letter-spacing: .05em; color: var(--g-gold); text-transform: uppercase; }
   .gv-chev{ color: var(--g-muted); margin-top: .2rem; transition: transform .2s ease; }
   .gv-quest[open] .gv-chev{ transform: rotate(180deg); }
-  .gv-quest ul{ margin: 0; padding: 0 1.4rem 1.3rem 2.6rem; color: var(--g-soft); }
-  .gv-quest li{ margin: .35rem 0; } .gv-quest li::marker{ color: var(--g-gold); }
+  .gv-quest ul{ margin: 0; padding: 0 1.4rem 1.3rem 1.4rem; color: var(--g-soft); }
+  /* game-view bullets: a small d-pad in gold */
+  .gv-quest ul, .gv-bullets{ list-style: none; }
+  .gv-bullets{ margin: 0 0 1.2rem; padding: 0; color: var(--g-soft); font-size: 15px; line-height: 1.5; }
+  .gv-quest li, .gv-bullets li{ position: relative; margin: .45rem 0; padding-left: 1.7rem; }
+  .gv-quest li::before, .gv-bullets li::before{ content: ''; position: absolute; left: 0; top: .28em; width: 1em; height: 1em; background: var(--g-gold);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M9 1.5h6a1 1 0 0 1 1 1V8h5.5a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H16v5.5a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V16H2.5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1H8V2.5a1 1 0 0 1 1-1zM12 4l-2 2.6h4zM12 20l-2-2.6h4zM4 12l2.6-2v4zM20 12l-2.6-2v4z'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M9 1.5h6a1 1 0 0 1 1 1V8h5.5a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H16v5.5a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V16H2.5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1H8V2.5a1 1 0 0 1 1-1zM12 4l-2 2.6h4zM12 20l-2-2.6h4zM4 12l2.6-2v4zM20 12l-2.6-2v4z'/%3E%3C/svg%3E") center / contain no-repeat; }
+  .gv-chips{ display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .6rem; }
+  .gv-chips span{ font: 600 12px var(--g-display); letter-spacing: .06em; text-transform: uppercase; color: var(--g-soft); border: 1px solid var(--g-line); padding: .2rem .5rem; }
   .gv-qnote{ margin: -.3rem 1.4rem .6rem; font-style: italic; color: var(--g-muted); font-size: 15px; }
-  @media (max-width: 560px){ .gv-quest summary{ grid-template-columns: 1fr auto; } .gv-quest .gv-badge{ grid-column: 1 / -1; justify-self: start; } .gv-quest ul{ padding-left: 2.2rem; } }
+  @media (max-width: 560px){ .gv-quest summary{ grid-template-columns: 1fr auto; } .gv-quest .gv-badge{ grid-column: 1 / -1; justify-self: start; } .gv-quest ul{ padding-left: 1.1rem; padding-right: 1.1rem; } }
   .gv-badge{ display: inline-block; font: 700 11px var(--g-display); letter-spacing: .15em; text-transform: uppercase; color: var(--g-pass);
     border: 1px solid var(--g-pass); padding: .2rem .5rem; white-space: nowrap; }
   .gv-badge-gold{ color: var(--g-gold-ink); background: var(--g-gold); border-color: var(--g-gold); }
@@ -649,27 +656,27 @@
     <div class="min-w-0">
       <p class="gs-lead">
         Senior QA Analyst with six years of experience testing large-scale, live consumer products at Epic Games
-        (Fortnite) and Ubisoft. Owns features end to end, from test planning and coverage through production release
+        (Fortnite) and Ubisoft. Owns features end to end, from test planning and coverage through release testing
         and post-release monitoring, with hands-on experience in purchase flows, paid content entitlements, and user
-        progression systems. Shipped every owned feature without a critical or blocking issue. Led a test sub-team,
-        onboarded roughly 24 new testers, and coordinated external QA teams.
+        progression systems. No owned feature shipped with a critical or blocking issue. Led a test sub-team, onboarded
+        roughly 24 testers new to the project, and coordinated external QA teams.
       </p>
       <div class="mt-7 flex flex-wrap gap-3">
         <a href="cv/Mykola_Makhovyk_Senior_QA_Analyst.pdf" download class="btn-accent">Download CV (PDF)</a>
         <a href="#experience" class="btn-ghost">Experience →</a>
         <a href="mailto:heaxyle@gmail.com" class="btn-ghost">heaxyle@gmail.com</a>
       </div>
-      <p class="gs-cert">ISTQB® Foundation Level · ASTQB® Test Management</p>
+      <p class="gs-cert">ISTQB® CTFL · ISTQB® CTAL-TM (Test Management)</p>
     </div>
 
     <div class="gs-report min-w-0">
       <div class="gs-report-head"><span>Coverage report</span><span>v2026.10</span></div>
       <ul>
-        <li><span>Functional / Regression / Smoke</span><span class="gs-pass">PASS</span></li>
+        <li><span>Functional / Regression / Exploratory</span><span class="gs-pass">PASS</span></li>
         <li><span>Purchase flows / Entitlements</span><span class="gs-pass">PASS</span></li>
         <li><span>Integration / Compatibility</span><span class="gs-pass">PASS</span></li>
-        <li><span>UI / UX / Localization</span><span class="gs-pass">PASS</span></li>
-        <li><span>Performance / UAT</span><span class="gs-pass">PASS</span></li>
+        <li><span>UI / Localization</span><span class="gs-pass">PASS</span></li>
+        <li><span>Performance (FPS, load times) / UAT</span><span class="gs-pass">PASS</span></li>
         <li><span>Release / Hotfix verification</span><span class="gs-pass">PASS</span></li>
         <li><span>Automation (PyAutoGUI, Jenkins CI)</span><span class="gs-pass">PASS</span></li>
       </ul>
@@ -679,8 +686,8 @@
   <div class="gs-kpis">
     <div><b>6</b><span>years of AAA QA</span></div>
     <div><b>5–8</b><span>features per release season</span></div>
-    <div class="ok"><b>0</b><span>critical or blocking issues shipped</span></div>
-    <div><b>24</b><span>new testers onboarded</span></div>
+    <div><b>3</b><span>countries worked in: Ukraine, Germany, US</span></div>
+    <div><b>~24</b><span>testers onboarded to the project</span></div>
   </div>
 </section>
 
@@ -727,14 +734,13 @@
           </summary>
           <div class="mt-5 pt-5 border-t" style="border-color: var(--line);">
             <ul class="space-y-2.5 leading-relaxed run-bullets" style="color: var(--muted);">
-              <li data-tags="live-service">Owned QA for 5–8 features per release season across Fortnite’s player progression and monetization systems (quests, rewards, and the paid seasonal Battle Pass), including licensed brand partnerships such as Pirates of the Caribbean and Teenage Mutant Ninja Turtles.</li>
-              <li data-tags="live-service">Tested Battle Pass purchase flows end to end (virtual currency spending, purchase completion, ownership verification) and age-rating restrictions on its cosmetic content for younger audiences.</li>
-              <li>Built test plans and coverage from scratch, verified each feature integrated cleanly with existing systems and shared data, and flagged quality risks and coverage changes to design and production.</li>
-              <li data-tags="live-service">Shipped every owned feature without a critical or blocking issue, catching pre-release defects that blocked user progression and prevented players from accessing licensed partner content.</li>
-              <li data-tags="live-service">Validated configuration and content data in the internal content editor, repeatedly catching data carried over between releases that still referenced outdated, no-longer-existing items.</li>
-              <li data-tags="live-service">Verified fixes in a pre-production staging environment before release, tested new features in isolated test environments, and adjusted live configuration values to create targeted test conditions.</li>
+              <li data-tags="live-service">Owned QA for 5–8 features per release season across Fortnite’s player progression and monetization features (quests, rewards, and the paid seasonal Battle Pass), including licensed brand partnerships such as Pirates of the Caribbean and Teenage Mutant Ninja Turtles.</li>
+              <li data-tags="live-service">Tested Battle Pass purchase flows (virtual currency spending, purchase completion, ownership verification) and age-rating restrictions on its cosmetic content for younger audiences.</li>
+              <li>Built test plans and coverage for each owned feature, verified it integrated cleanly with existing systems and shared data, and flagged quality risks and coverage changes to design and production.</li>
+              <li data-tags="live-service">Every owned feature shipped without a critical or blocking issue; pre-release catches included a defect blocking user progression and one preventing players from accessing licensed partner content.</li>
+              <li data-tags="live-service">Validated configuration and content data in the internal content editor, repeatedly catching data carried over between releases that still referenced items that no longer existed.</li>
+              <li data-tags="live-service">Verified fixes in a pre-production staging environment and monitored owned features through production releases and live events; tested new features in isolated test environments and adjusted configuration values in test environments to create targeted test conditions.</li>
               <li>Briefed external QA teams on expected behavior each release cycle, reducing misfiled defects and clarification requests to developers and designers.</li>
-              <li data-tags="live-service">Monitored owned features during production releases and live events, confirming clean deployment and standing by to verify hotfixes.</li>
             </ul>
             <div class="mt-4 flex flex-wrap gap-2">
               <span class="chip">Fortnite</span><span class="chip">Purchase flows</span><span class="chip">Paid content entitlements</span><span class="chip">Live-service releases</span><span class="chip">Test planning</span>
@@ -769,9 +775,10 @@
               </div>
               <p class="role-note">Transferred to Mainz to continue on the same product through its console release (PS5, Xbox Series X|S).</p>
               <ul class="space-y-2.5 leading-relaxed run-bullets" style="color: var(--muted);">
-                <li data-tags="automation">Recorded and configured automated validation scenarios for core gameplay flows, such as spending in-game currency on buildings and validating the result, stored in Perforce and run in Jenkins CI; monitored daily pass/fail results, reducing manual smoke and regression testing.</li>
-                <li>Continuously updated test suites and wrote new test cases based on test results and coverage gaps, keeping coverage current instead of spending effort on outdated cases.</li>
+                <li data-tags="automation">Recorded and configured automated validation scenarios with the studio’s record/playback tool for core gameplay flows, such as spending in-game currency on buildings and validating the result, stored in Perforce and run in Jenkins CI; monitored daily pass/fail results, reducing manual smoke testing.</li>
+                <li>Continuously updated test suites and wrote new test cases based on test results and coverage gaps, keeping coverage current as features changed.</li>
                 <li>Tested assigned areas hands-on, escalating critical and blocking issues ahead of release milestones.</li>
+                <li>Monitored frame rate and level load times across PC, PS5, and Xbox Series X|S, flagging frame-rate drops and slow loads for investigation.</li>
                 <li>Tracked feature progress in development meetings, relayed changes to external QA teams, and analyzed their results to keep their coverage aligned with current builds.</li>
                 <li data-tags="automation">Built a Python (PyAutoGUI) script verifying that settings labels and screen resolution changes rendered correctly.</li>
               </ul>
@@ -783,15 +790,15 @@
                 <p class="font-mono text-xs" style="color: var(--muted);">Ubisoft Kyiv, Ukraine · Jun 2019 – May 2022</p>
               </div>
               <ul class="space-y-2.5 leading-relaxed run-bullets" style="color: var(--muted);">
-                <li>Tested the PC version across all areas for three years; caught a revenue-impacting entitlement defect in multiplayer sessions that gave every participant paid add-on content only one user had purchased, before release.</li>
-                <li data-tags="leadership">Built and maintained test plans and test cases, and helped junior and mid-level testers cover their assigned areas.</li>
-                <li data-tags="leadership">Oversaw the PC sub-team, then led the PS5 sub-team when console development began; onboarded and trained roughly 24 new testers, ramping them up fast enough to keep pace with the project.</li>
-                <li data-tags="leadership">Assigned daily tasks with the team lead, led internal playtest sessions, and reported QA status daily and weekly.</li>
+                <li>Tested the PC version across all areas for three years; caught, before release, a revenue-impacting entitlement defect in multiplayer sessions that gave every participant paid add-on content only one user had purchased.</li>
+                <li data-tags="leadership">Grew from the original four-person PC squad into leading the PS5 sub-team when console development began; as point of contact, onboarded roughly 24 testers joining the console sub-teams (some of them new to QA) and guided them through the project, ramping them up fast enough to keep pace with it.</li>
+                <li>Monitored frame rate and level load times on PC and, once console development began, PS5 builds, flagging frame-rate drops and slow loads.</li>
+                <li data-tags="leadership">Assigned daily tasks with the team lead, maintained test plans and test cases, led internal playtest sessions, and reported QA status daily and weekly.</li>
               </ul>
             </div>
 
             <div class="flex flex-wrap gap-2">
-              <span class="chip">Anno 1800</span><span class="chip">In-game economy</span><span class="chip">Entitlements</span><span class="chip">Jenkins CI</span><span class="chip">Sub-team lead</span><span class="chip">Onboarding</span>
+              <span class="chip">Anno 1800</span><span class="chip">In-game economy</span><span class="chip">Entitlements</span><span class="chip">Jenkins CI</span><span class="chip">Performance</span><span class="chip">Sub-team lead</span><span class="chip">Onboarding</span>
             </div>
           </div>
         </details>
@@ -817,26 +824,30 @@
   <div class="max-w-content mx-auto px-5 md:px-8 py-16 md:py-24">
     <p class="eyebrow mb-3">03 · Projects</p>
     <h2 class="font-display font-bold text-3xl md:text-4xl mb-3">Selected projects</h2>
-    <p class="max-w-xl mb-10" style="color: var(--muted);">Independent work since August 2025. Both were built with AI assistance. The design calls, the reviews that find and fix bugs, and what the tests have to cover are mine.</p>
+    <p class="max-w-xl mb-10" style="color: var(--muted);">Independent work, 2026 to present. Code, tools and translation are generated with AI (Claude); my role is direction, review, testing and release.</p>
 
     <!-- Featured: Drake Arena -->
     <article class="rounded-2xl border p-5 md:p-8 mb-8" style="border-color: var(--line); background: var(--surface);">
       <div class="flex flex-wrap items-center gap-2 mb-4">
         <span class="pill pill-pass"><span class="dot pulse"></span> live build</span>
         <span class="pill pill-review">public repo</span>
-        <span class="font-mono text-xs" style="color: var(--muted);">Aug 2025 – present</span>
+        <span class="font-mono text-xs" style="color: var(--muted);">2026 – present</span>
       </div>
 
       <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-8 lg:gap-12">
         <div class="min-w-0">
           <h3 class="font-display font-bold text-2xl md:text-3xl mb-3">Drake Arena</h3>
-          <p class="text-lg leading-snug mb-4">A real-time web app driven by live Twitch chat events, tested like a production feature.</p>
+          <p class="text-lg leading-snug mb-4">A real-time web app driven by live Twitch chat events.</p>
           <p class="text-sm leading-relaxed mb-4" style="color: var(--muted);">
             Viewers create a drake, pick one of six elements and join a ranked queue. Turn-based fights then play out on
             stream on their own: crits, armor, twelve buffs and debuffs, class ultimates and a sudden-death phase. It is a
             single HTML file with no build step and no backend, in English and Ukrainian. The code is written with Claude
             Code; I own the game design, the balance tuning, the bug reviews and the test plan.
           </p>
+          <ul class="space-y-2.5 leading-relaxed run-bullets text-sm mb-5" style="color: var(--muted);">
+            <li>Treated it like a production feature: reviewed each build, logging bugs and rule changes (13 in one review round), and requested test coverage for every change.</li>
+            <li>That coverage now runs in CI on every pull request: seeded simulations (tens of thousands of runs per build) behind a pass/fail gate, mutation testing that checks the suite catches deliberately injected bugs, and Playwright UI and layout checks in both languages.</li>
+          </ul>
           <div class="missed">
             <p class="eyebrow mb-1.5" style="color: var(--fail);">The bug the tests missed</p>
             <p class="text-sm leading-relaxed" style="color: var(--muted);">
@@ -867,7 +878,7 @@
             </details>
           </div>
           <div class="mt-5 flex flex-wrap gap-2">
-            <span class="chip">Claude Code</span><span class="chip">JavaScript</span><span class="chip">Playwright</span><span class="chip">GitHub Actions</span><span class="chip">Seeded simulation</span><span class="chip">Mutation testing</span><span class="chip">EN / UK localization</span>
+            <span class="chip">Claude Code</span><span class="chip">JavaScript</span><span class="chip">Playwright</span><span class="chip">GitHub Actions</span><span class="chip">Seeded simulation</span><span class="chip">Mutation testing</span><span class="chip">EN / UA localization</span>
           </div>
         </div>
 
@@ -906,6 +917,48 @@
       </div>
     </article>
 
+    <!-- Dressmaker: Ukrainian fan localization -->
+    <article class="rounded-2xl border p-5 md:p-8 mb-8" style="border-color: var(--line); background: var(--surface);">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="pill pill-review">beta v0.9</span>
+        <span class="pill pill-review">public repo</span>
+        <span class="font-mono text-xs" style="color: var(--muted);">2026 – present · LQA pass in progress</span>
+      </div>
+      <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-8 lg:gap-12">
+        <div class="min-w-0">
+          <h3 class="font-display font-bold text-xl md:text-2xl mb-3">Dressmaker · Ukrainian localization</h3>
+          <p class="text-lg leading-snug mb-4">An unofficial Ukrainian fan localization of a commercial PC game on Steam, run like a localization QA project.</p>
+          <ul class="space-y-2.5 leading-relaxed run-bullets text-sm" style="color: var(--muted);">
+            <li>Directed and tested an AI-generated EN→UA translation of ~6,400 strings (UI, tutorial, items, dialogue, ~550 pattern-piece names), using a terminology glossary and grammatical-gender rules, with placeholders and rich-text tags validated across every string.</li>
+            <li>Gathered the evidence (application logs, in-game screenshots) that pinned down why parts of the translation didn’t appear: an unreadable re-saved data bundle, an integrity check rejecting modified files, and strings stored outside the localization tables; verified each fix in-game and on the end user’s PC.</li>
+            <li>Published it as patch scripts only (no game files distributed), with install/uninstall scripts and automatic backups; now running the LQA pass with a native-speaker playtester, using a bilingual bug-report template with category and severity fields.</li>
+          </ul>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="chip">Localization QA</span><span class="chip">EN → UA</span><span class="chip">Terminology glossary</span><span class="chip">Unity</span><span class="chip">Python</span><span class="chip">Claude</span>
+          </div>
+        </div>
+        <div class="min-w-0">
+          <p class="eyebrow mb-3">From strings to release</p>
+          <ol class="pipeline">
+            <li><span class="step-n">1</span><div><strong>Translate</strong><span>About 6,400 strings, AI-generated, held to a terminology glossary and grammatical-gender rules.</span></div></li>
+            <li><span class="step-n">2</span><div><strong>Validate</strong><span>Placeholders and rich-text tags checked across every string.</span></div></li>
+            <li><span class="step-n">3</span><div><strong>Diagnose</strong><span>Logs and screenshots traced the strings that didn’t show up in the game; each fix verified in-game.</span></div></li>
+            <li><span class="step-n">4</span><div><strong>Release</strong><span>Patch scripts only, no game files. Install and uninstall scripts with automatic backups.</span></div></li>
+            <li><span class="step-n">5</span><div><strong>LQA</strong><span>Native-speaker playtest, with bugs filed through a bilingual template.</span></div></li>
+          </ol>
+          <p class="eyebrow mt-4 mb-3">LQA bug categories · severity Critical / Major / Minor</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip">Mistranslation</span><span class="chip">Untranslated</span><span class="chip">Truncation / overflow</span><span class="chip">Terminology</span><span class="chip">Grammar / gender</span><span class="chip">Style / tone</span><span class="chip">Tags / placeholders broken</span><span class="chip">Font / rendering</span>
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs">
+        <a class="ext-link" href="https://github.com/Heaxyle/dressmaker-ukrainian" target="_blank" rel="noopener">Source on GitHub ↗</a>
+        <a class="ext-link" href="https://github.com/Heaxyle/dressmaker-ukrainian/blob/main/.github/ISSUE_TEMPLATE/localization_bug.yml" target="_blank" rel="noopener">LQA bug template ↗</a>
+        <a class="ext-link" href="https://github.com/Heaxyle/dressmaker-ukrainian/blob/main/docs/glossary.md" target="_blank" rel="noopener">Terminology glossary ↗</a>
+      </div>
+    </article>
+
     <!-- QA knowledge assistant -->
     <article class="rounded-2xl border p-5 md:p-8" style="border-color: var(--line); background: var(--surface);">
       <div class="flex flex-wrap items-center gap-2 mb-4">
@@ -918,7 +971,7 @@
           <p class="text-sm leading-relaxed mb-4" style="color: var(--muted);">
             A local retrieval (RAG) tool that answers questions from test plans, specs and past bug reports, and cites
             the source file on every answer. It runs on your own machine, so the documents never leave it. Built with AI
-            assistance for a friend’s support team, then rebuilt for QA docs.
+            assistance for a friend’s support team, then adapted to QA docs.
           </p>
           <p class="text-sm leading-relaxed mb-5" style="color: var(--muted);">
             Two searches run side by side: <strong style="color: var(--ink);">vector search</strong> for meaning, and
@@ -972,15 +1025,21 @@
         <tbody>
           <tr>
             <td class="font-display font-medium">Testing</td>
-            <td><span class="chip">Functional</span> <span class="chip">Regression</span> <span class="chip">Smoke</span> <span class="chip">Integration</span> <span class="chip">Compatibility</span> <span class="chip">UI/UX</span> <span class="chip">Localization</span> <span class="chip">Performance</span> <span class="chip">UAT</span> <span class="chip">Production release &amp; hotfix verification</span></td>
+            <td><span class="chip">Functional</span> <span class="chip">Regression</span> <span class="chip">Smoke</span> <span class="chip">Exploratory</span> <span class="chip">Integration</span> <span class="chip">Compatibility</span> <span class="chip">UI</span> <span class="chip">Localization</span> <span class="chip">Performance (frame rate, load times)</span> <span class="chip">UAT</span> <span class="chip">Release &amp; hotfix verification</span></td>
             <td><span class="meter" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
             <td class="text-sm" style="color: var(--muted);">Core discipline since 2019.</td>
           </tr>
           <tr>
             <td class="font-display font-medium">Domain experience</td>
-            <td><span class="chip">Purchase flows</span> <span class="chip">Virtual currency spending</span> <span class="chip">Paid content entitlements</span> <span class="chip">Age-rating restrictions</span> <span class="chip">In-game economy</span> <span class="chip">Progression &amp; rewards</span> <span class="chip">Config &amp; content data</span> <span class="chip">Live-service releases</span></td>
+            <td><span class="chip">Purchase flows</span> <span class="chip">Virtual currency spending</span> <span class="chip">Paid pass purchases</span> <span class="chip">Paid content entitlements</span> <span class="chip">Age-rating restrictions</span> <span class="chip">Progression &amp; rewards</span> <span class="chip">Config &amp; content data</span> <span class="chip">Live-service releases</span></td>
             <td><span class="meter" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
             <td class="text-sm" style="color: var(--muted);">Monetization, entitlements and progression on a live product with millions of players.</td>
+          </tr>
+          <tr>
+            <td class="font-display font-medium">Documentation &amp; validation</td>
+            <td><span class="chip">Test plans</span> <span class="chip">Test cases</span> <span class="chip">Test evidence</span> <span class="chip">Daily / weekly status reporting</span></td>
+            <td><span class="meter" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+            <td class="text-sm" style="color: var(--muted);">Documentation-driven, requirements-based testing suited to regulated validation work.</td>
           </tr>
           <tr>
             <td class="font-display font-medium">Platforms</td>
@@ -1001,22 +1060,29 @@
             <td class="text-sm" style="color: var(--muted);">A PyAutoGUI UI verification script and record/playback scenarios run in Jenkins CI. I read Python and adapt existing tooling; original scripting goes through AI assistance.</td>
           </tr>
           <tr>
+            <td class="font-display font-medium">Currently learning</td>
+            <td><span class="chip">Playwright (Python/pytest)</span> <span class="chip">Postman</span> <span class="chip">SQL</span> <span class="chip">GitHub Actions</span></td>
+            <td><span class="pill pill-review">in progress</span></td>
+            <td class="text-sm" style="color: var(--muted);">Learning the tools behind the Drake Arena CI checks hands-on.</td>
+          </tr>
+          <tr>
             <td class="font-display font-medium">Leadership &amp; process</td>
             <td><span class="chip">Agile / Scrum</span> <span class="chip">Test planning</span> <span class="chip">Sub-team leadership</span> <span class="chip">Onboarding &amp; mentoring</span> <span class="chip">External QA team coordination</span> <span class="chip">QA status &amp; risk reporting</span></td>
             <td><span class="meter" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
-            <td class="text-sm" style="color: var(--muted);">Led a test sub-team and onboarded roughly 24 new testers.</td>
+            <td class="text-sm" style="color: var(--muted);">Led a test sub-team and onboarded roughly 24 testers new to the project.</td>
           </tr>
           <tr>
             <td class="font-display font-medium">AI-assisted development</td>
-            <td><span class="chip">Claude Code</span> <span class="chip">LangChain</span> <span class="chip">ChromaDB</span> <span class="chip">Ollama</span></td>
+            <td><span class="chip">Claude / Claude Code</span> <span class="chip">LangChain</span> <span class="chip">ChromaDB</span> <span class="chip">Ollama</span></td>
             <td><span class="meter" aria-label="4 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td>
-            <td class="text-sm" style="color: var(--muted);">Directs AI-built tools and tests them like production features. See Projects.</td>
+            <td class="text-sm" style="color: var(--muted);">Directs AI-built tools and an AI-generated localization, and tests them like production features. See Projects.</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="font-mono text-xs mt-4" style="color: var(--muted);">ISTQB® Certified Tester, Foundation Level · ASTQB® Test Management</p>
-    <p class="font-mono text-xs mt-2" style="color: var(--muted);">Languages: English (Advanced) · Ukrainian (Native) · Russian (Fluent)</p>
+    <p class="font-mono text-xs mt-4" style="color: var(--muted);">ISTQB® Certified Tester Foundation Level (CTFL), 2022 · ISTQB® Certified Tester Advanced Level, Test Management (CTAL-TM), 2024</p>
+    <p class="font-mono text-xs mt-2" style="color: var(--muted);">Training: AI Fluency: Framework &amp; Foundations · Claude Code 101 (Anthropic Academy, Oct 2026)</p>
+    <p class="font-mono text-xs mt-2" style="color: var(--muted);">Languages: English (Fluent) · Ukrainian (Native) · Russian (Fluent)</p>
   </div>
 </section>
 
@@ -1028,7 +1094,7 @@
     <div class="grid md:grid-cols-2 gap-10 md:gap-6 items-start">
       <div>
         <p class="eyebrow mb-3">05 · Contact</p>
-        <h2 class="font-display font-bold text-2xl md:text-3xl mb-4">Let's talk about your next build.</h2>
+        <h2 class="font-display font-bold text-2xl md:text-3xl mb-4">Let’s talk about your next build.</h2>
         <p class="max-w-md" style="color: var(--muted);">Open to Senior QA and QA Analyst roles, with relocation or remote. Authorized to work in the US, no sponsorship required.</p>
       </div>
 
@@ -1083,9 +1149,9 @@
         <h1 class="gv-h1">Mykola Makhovyk</h1>
         <p class="gv-lead">
           Senior QA Tester with six years of AAA experience at Epic Games and Ubisoft. Owned feature QA for Fortnite’s
-          Quests and Battle Pass and shipped every owned feature without a critical or blocking issue. Spent four years
-          on Anno 1800, leading a PS5 sub-team and onboarding roughly 24 new testers. Experienced across the full
-          live-service cycle: in-engine configuration checks, pre-release hotfix validation, and live update monitoring.
+          Quests and Battle Pass, including purchase flows and age-rating restrictions; no owned feature released with a
+          critical or blocking issue. Spent four years on Anno 1800, leading a PS5 sub-team and onboarding roughly 24 testers new to the project. Experienced
+          across the live-service cycle: in-engine configuration checks, pre-release hotfix validation, and live update monitoring.
         </p>
         <div class="gv-btns">
           <a href="cv/Mykola_Makhovyk_Senior_QA_Tester.pdf" download class="gv-btn gv-btn-gold">Download CV (PDF)</a>
@@ -1095,7 +1161,7 @@
         <ul class="gv-meta">
           <li>Verona, KY · open to relocation and remote</li>
           <li>Authorized to work in the US, no sponsorship required</li>
-          <li>ISTQB® Foundation Level · ASTQB® Test Management</li>
+          <li>ISTQB® CTFL · ISTQB® CTAL-TM (Test Management)</li>
         </ul>
       </div>
 
@@ -1105,8 +1171,8 @@
         <p class="gv-small">Next tier: your studio</p>
         <div class="gv-attrs">
           <div><b>5–8</b><span>features owned per Fortnite season</span></div>
-          <div class="ok"><b>0</b><span>critical or blocking issues shipped</span></div>
-          <div><b>24</b><span>new testers onboarded</span></div>
+          <div><b>3</b><span>countries worked in: Ukraine, Germany, US</span></div>
+          <div><b>~24</b><span>testers onboarded to the project</span></div>
           <div><b>9</b><span>platforms, consoles on dev kits</span></div>
         </div>
       </aside>
@@ -1131,13 +1197,12 @@
           </summary>
           <ul>
             <li>Owned QA for 5–8 features per season on Fortnite’s Quests and Battle Pass team, including IP collaborations such as Pirates of the Caribbean and Teenage Mutant Ninja Turtles.</li>
-            <li>Tested Battle Pass purchase flows end to end (V-Bucks spending, purchase completion, ownership verification) and age-rating restrictions on Battle Pass cosmetics for E and E10+ rated experiences.</li>
-            <li>Built test plans and coverage from scratch, verified each feature integrated cleanly with existing systems and shared data, and flagged quality risks and coverage changes to design and production.</li>
-            <li>Shipped every owned feature without a critical or blocking issue, catching pre-release bugs that blocked Story Quest progression and prevented players from unlocking collaboration content.</li>
+            <li>Tested Battle Pass purchase flows (V-Bucks spending, purchase completion, ownership verification) and age-rating restrictions on Battle Pass cosmetics for E and E10+ rated experiences.</li>
+            <li>Built test plans and coverage for each owned feature, verified it integrated cleanly with existing systems and shared data, and flagged quality risks and coverage changes to design and production.</li>
+            <li>Every owned feature shipped without a critical or blocking issue; pre-release catches included a bug blocking Story Quest progression and one preventing players from unlocking collaboration content.</li>
             <li>Reviewed quest configurations directly in Unreal Editor, repeatedly catching cross-season quest data that still referenced the previous season’s items before it reached players.</li>
-            <li>Validated hotfixes in the staging environment before release, tested new features in isolation on dedicated test islands, and used Unreal’s live-ops tooling to adjust values such as spawn weights to create targeted test conditions.</li>
+            <li>Validated hotfixes in staging before release and monitored owned features through live updates and events; tested new features in isolation on dedicated test islands and used the live-ops tooling in test environments to adjust values such as spawn weights for targeted test conditions.</li>
             <li>Briefed external QA teams on expected feature behavior each season, reducing misfiled bugs and clarification requests to developers and designers.</li>
-            <li>Monitored owned features during live updates and events, confirming clean deployment and standing by to validate hotfixes if issues surfaced.</li>
           </ul>
         </details>
 
@@ -1149,9 +1214,10 @@
           </summary>
           <p class="gv-qnote">Transferred to Mainz to continue on Anno 1800 through its console port.</p>
           <ul>
-            <li>Recorded and configured automated gameplay-validation scenarios, stored in Perforce and run in Jenkins CI; monitored daily pass/fail results, reducing manual smoke and regression testing.</li>
-            <li>Continuously updated test suites and wrote new test cases based on test results and coverage gaps, keeping coverage current instead of spending effort on outdated cases.</li>
+            <li>Recorded and configured automated gameplay-validation scenarios with the studio’s record/playback tool, such as spending in-game currency on buildings and validating the result, stored in Perforce and run in Jenkins CI; monitored daily pass/fail results, reducing manual smoke testing.</li>
+            <li>Continuously updated test suites and wrote new test cases based on test results and coverage gaps, keeping coverage current as features changed.</li>
             <li>Tested assigned areas hands-on, escalating critical and blocking issues ahead of milestones.</li>
+            <li>Monitored frame rate and level load times across PC, PS5, and Xbox Series X|S, flagging FPS drops and slow loads for investigation.</li>
             <li>Tracked feature progress in development meetings, relayed changes to external QA teams, and analyzed their results to keep their coverage aligned with current builds.</li>
             <li>Built a Python (PyAutoGUI) script verifying that settings labels and screen resolution changes rendered correctly.</li>
           </ul>
@@ -1165,9 +1231,9 @@
           </summary>
           <ul>
             <li>Tested Anno 1800 PC across all game areas for three years, catching a pre-release co-op entitlement bug that let every player in a session receive DLC and paid content only one had purchased.</li>
-            <li>Built and maintained test plans and test cases, and helped junior and mid-level testers cover their assigned areas.</li>
-            <li>Oversaw the PC sub-team, then led the PS5 sub-team when console development began; onboarded and trained roughly 24 new testers, ramping them up fast enough to keep pace with the project.</li>
-            <li>Assigned daily tasks with the team lead, led playtests, and reported QA status daily and weekly.</li>
+            <li>Grew from the original four-person PC squad into leading the PS5 sub-team when console development began; as point of contact, onboarded roughly 24 testers joining the console sub-teams (some of them new to QA) and guided them through the project, ramping them up fast enough to keep pace with it.</li>
+            <li>Monitored frame rate and level load times on PC and, once console development began, PS5 builds, flagging FPS drops and slow loads.</li>
+            <li>Assigned daily tasks with the team lead, maintained test plans and test cases, led playtests, and reported QA status daily and weekly.</li>
             <li>Supported testing and playtests on other Ubisoft titles (Watch Dogs: Legion, Steep, Assassin’s Creed Valhalla, Far Cry 6, Rainbow Six Siege); credited on Hyper Scape.</li>
           </ul>
         </details>
@@ -1178,15 +1244,19 @@
     <!-- Projects -->
     <section id="g-projects" class="gv-wrap gv-section">
       <h2 class="gv-h2">Projects</h2>
-      <p class="gv-intro">Independent work since August 2025. Both were built with AI assistance. The design calls, the reviews that find and fix bugs, and what the tests have to cover are mine.</p>
+      <p class="gv-intro">Independent work, 2026 to present. Code, tools and translation are generated with AI (Claude); my role is direction, review, testing and release.</p>
 
       <article class="gv-panel gv-feature">
         <div class="gv-tags"><span class="gv-badge gv-badge-gold">Live build</span><span class="gv-badge gv-badge-line">Public repo</span></div>
         <div class="gv-two">
           <div class="min-w-0">
             <h3 class="gv-h3">Drake Arena</h3>
-            <p class="gv-tagline">A Twitch chat auto-battler that runs as an OBS overlay, tested like a production feature.</p>
+            <p class="gv-tagline">A Twitch chat auto-battler that runs as an OBS overlay.</p>
             <p class="gv-body">Viewers create a drake, pick one of six elements and join a ranked queue. Turn-based fights then play out on stream on their own: crits, armor, twelve buffs and debuffs, class ultimates and a sudden-death phase. It is a single HTML file with no build step and no backend, in English and Ukrainian. The code is written with Claude Code; I own the game design, the balance tuning, the bug reviews and the test plan.</p>
+            <ul class="gv-bullets">
+              <li>Treated it like a production feature: reviewed each build, logging bugs and rule changes (13 in one review round), and requested test coverage for every change.</li>
+              <li>That coverage now runs in CI on every pull request: seeded balance simulations (tens of thousands of fights per run) behind a win-rate gate, mutation testing that checks the suite catches deliberately injected bugs, and Playwright UI and layout checks in both languages.</li>
+            </ul>
             <div class="gv-missed">
               <p class="gv-label" style="color: var(--g-fail);">The bug the tests missed</p>
               <p>Every automated check was green while a title badge sat 5&nbsp;px low and got clipped on every fighter card. Manual review of the CI screenshots caught it; one line of CSS fixed it. The lesson went into the test docs: green automation doesn’t prove readability.</p>
@@ -1235,12 +1305,44 @@
       </article>
 
       <article class="gv-panel">
+        <div class="gv-tags"><span class="gv-badge gv-badge-gold">Beta v0.9</span><span class="gv-badge gv-badge-line">Public repo</span><span class="gv-small" style="margin:0;">LQA pass in progress</span></div>
+        <div class="gv-two">
+          <div class="min-w-0">
+            <h3 class="gv-h3">Dressmaker</h3>
+            <p class="gv-tagline">Unofficial Ukrainian fan localization for a Steam game built in Unity 6, run like an LQA project.</p>
+            <ul class="gv-bullets">
+              <li>Directed and tested an AI-generated EN→UA translation of ~6,400 strings (UI, tutorial, items, dialogue, ~550 pattern-piece names), using a terminology glossary and grammatical-gender rules, with placeholders and rich-text tags validated across every string.</li>
+              <li>Gathered the evidence (Unity player log, in-game screenshots) that pinned down why parts of the translation didn’t appear: an unreadable re-saved bundle, a catalog integrity check, and strings stored outside the localization tables; verified each fix in-game and on the end user’s PC.</li>
+              <li>Published it as patch scripts only (no game files distributed), with install/uninstall scripts and automatic backups; now running the LQA pass with a native-speaker playtester, using a bilingual bug-report template with category and severity fields.</li>
+            </ul>
+          </div>
+          <div class="min-w-0">
+            <p class="gv-label">From strings to release</p>
+            <ol class="gv-pipeline">
+              <li><span class="gem gem-sm"><span>1</span></span><div><strong>Translate</strong><span>About 6,400 strings, AI-generated, held to a terminology glossary and grammatical-gender rules.</span></div></li>
+              <li><span class="gem gem-sm"><span>2</span></span><div><strong>Validate</strong><span>Placeholders and rich-text tags checked across every string.</span></div></li>
+              <li><span class="gem gem-sm"><span>3</span></span><div><strong>Diagnose</strong><span>Logs and screenshots traced the strings that didn’t show up in the game; each fix verified in-game.</span></div></li>
+              <li><span class="gem gem-sm"><span>4</span></span><div><strong>Release</strong><span>Patch scripts only, no game files. Install and uninstall scripts with automatic backups.</span></div></li>
+              <li><span class="gem gem-sm"><span>5</span></span><div><strong>LQA</strong><span>Native-speaker playtest, with bugs filed through a bilingual template.</span></div></li>
+            </ol>
+            <p class="gv-label" style="margin-top:.6rem;">LQA bug categories · Critical / Major / Minor</p>
+            <div class="gv-chips"><span>Mistranslation</span><span>Untranslated</span><span>Truncation / overflow</span><span>Terminology</span><span>Grammar / gender</span><span>Style / tone</span><span>Tags / placeholders broken</span><span>Font / rendering</span></div>
+          </div>
+        </div>
+        <div class="gv-links">
+          <a href="https://github.com/Heaxyle/dressmaker-ukrainian" target="_blank" rel="noopener">Source on GitHub ↗</a>
+          <a href="https://github.com/Heaxyle/dressmaker-ukrainian/blob/main/.github/ISSUE_TEMPLATE/localization_bug.yml" target="_blank" rel="noopener">LQA bug template ↗</a>
+          <a href="https://github.com/Heaxyle/dressmaker-ukrainian/blob/main/docs/glossary.md" target="_blank" rel="noopener">Terminology glossary ↗</a>
+        </div>
+      </article>
+
+      <article class="gv-panel">
         <div class="gv-tags"><span class="gv-badge">Shipped</span><span class="gv-small" style="margin:0;">Local tool · runs on Ollama</span></div>
         <div class="gv-two">
           <div class="min-w-0">
             <h3 class="gv-h3">QA Knowledge Assistant</h3>
-            <p class="gv-body">A local retrieval (RAG) tool that answers questions from test plans, specs and past bug reports, and cites the source file on every answer. It runs on your own machine, so the documents never leave it. Built with AI assistance for a friend’s support team, then rebuilt for QA docs.</p>
-            <p class="gv-body">Vector search finds meaning, keyword search finds exact hits like feature names, ticket IDs and error codes. Results are merged and reranked before the model sees them.</p>
+            <p class="gv-body">A local retrieval (RAG) tool that answers questions from test plans, specs and past bug reports, and cites the source file on every answer. It runs on your own machine, so the documents never leave it. Built with AI assistance for a friend’s support team, then adapted to QA docs.</p>
+            <p class="gv-body">Vector search finds meaning; keyword search finds exact hits like feature names, ticket IDs and error codes. Results are merged and reranked before the model sees them.</p>
           </div>
           <div class="min-w-0">
             <p class="gv-label">Code excerpt · the hybrid retriever</p>
@@ -1266,21 +1368,23 @@
       <h2 class="gv-h2">Loadout</h2>
       <p class="gv-intro">Self-rated, five segments per skill.</p>
       <div class="gv-loadout">
-        <div class="gv-slot"><div class="gv-slot-head"><h3>Testing</h3><span class="gv-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p>Functional, regression, smoke, integration/compatibility, performance, UI/UX, localization, UAT, live-ops and hotfix validation.</p></div>
+        <div class="gv-slot"><div class="gv-slot-head"><h3>Testing</h3><span class="gv-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p>Functional, regression, smoke, exploratory, integration/compatibility, performance (frame rate, load times), UI, localization, playtesting, UAT, live-ops and hotfix validation.</p></div>
+        <div class="gv-slot"><div class="gv-slot-head"><h3>Game systems</h3><span class="gv-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p>Live-service seasons, Battle Pass and monetization, quests and progression, co-op and multiplayer, IP collaborations, city-builder and strategy economy, EN/UA localization.</p></div>
         <div class="gv-slot"><div class="gv-slot-head"><h3>Platforms</h3><span class="gv-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p>Windows PC, PS4, PS5, Xbox One, Xbox Series X|S, Nintendo Switch, Android, iOS, Amazon Luna (cloud). PlayStation, Xbox and Switch dev kits.</p></div>
-        <div class="gv-slot"><div class="gv-slot-head"><h3>Tools</h3><span class="gv-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p>Unreal Engine/Editor, JIRA, TestRail, QMetry, Confluence, Perforce (P4V), Jenkins.</p></div>
+        <div class="gv-slot"><div class="gv-slot-head"><h3>Tools</h3><span class="gv-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p>Unreal Editor, JIRA, TestRail, QMetry, Confluence, Perforce (P4V), Jenkins.</p></div>
         <div class="gv-slot"><div class="gv-slot-head"><h3>Leadership &amp; process</h3><span class="gv-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p>Agile/Scrum, sub-team leadership, onboarding and mentoring, external QA vendor coordination, QA status and risk reporting.</p></div>
-        <div class="gv-slot"><div class="gv-slot-head"><h3>AI-assisted development</h3><span class="gv-bar" aria-label="4 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div><p>Claude Code, LangChain, ChromaDB, Ollama. Directs AI-built tools and tests them like production features.</p></div>
+        <div class="gv-slot"><div class="gv-slot-head"><h3>AI-assisted development</h3><span class="gv-bar" aria-label="4 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div><p>Claude, Claude Code, LangChain, ChromaDB, Ollama. Directs AI-built tools and an AI-generated localization, and tests them like production features.</p></div>
         <div class="gv-slot"><div class="gv-slot-head"><h3>Automation</h3><span class="gv-bar" aria-label="2 out of 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div><p>Python (PyAutoGUI) UI verification script; record/playback gameplay automation run in Jenkins CI. Original scripting goes through AI assistance.</p></div>
+        <div class="gv-slot"><div class="gv-slot-head"><h3>Currently learning</h3><span class="gv-badge gv-badge-line">In progress</span></div><p>Playwright (Python/pytest), Postman, SQL, GitHub Actions.</p></div>
       </div>
-      <p class="gv-small gv-langs">Languages: English (Advanced) · Ukrainian (Native) · Russian (Fluent)</p>
+      <p class="gv-small gv-langs">ISTQB® CTFL (2022) · ISTQB® CTAL-TM, Test Management (2024)<br>Training: AI Fluency: Framework &amp; Foundations · Claude Code 101 (Anthropic Academy, Oct 2026)<br>Languages: English (Fluent) · Ukrainian (Native) · Russian (Fluent)</p>
     </section>
 
     <!-- Contact -->
     <section id="g-contact" class="gv-wrap gv-section gv-contact">
       <div>
         <p class="gv-eyebrow">Contact</p>
-        <h2 class="gv-h2" style="margin-top:.4rem;">Let's talk about your next build.</h2>
+        <h2 class="gv-h2" style="margin-top:.4rem;">Let’s talk about your next build.</h2>
         <p class="gv-body">Open to Senior QA roles in game development, with relocation or remote. Authorized to work in the US, no sponsorship required.</p>
       </div>
       <ul class="gv-contacts">
