@@ -458,7 +458,7 @@
 
   /* career track */
   .gv-track{ list-style: none; margin: 0 0 2rem; padding: 0; display: grid; grid-template-columns: 1fr; gap: 1rem; }
-  @media (min-width: 768px){ .gv-track{ grid-template-columns: repeat(4, 1fr); gap: 0; } }
+  @media (min-width: 768px){ .gv-track{ grid-template-columns: repeat(5, 1fr); gap: 0; } }
   .gv-track .tier{ position: relative; padding: 0 1rem 0 3rem; min-height: 3.2rem; }
   @media (min-width: 768px){ .gv-track .tier{ padding: 0 1rem 0 0; } }
   .gv-track .tier::before{ content: ''; position: absolute; background: var(--g-gold); left: .95rem; top: 2.2rem; bottom: -1rem; width: 3px; }
@@ -714,6 +714,35 @@
     </div>
 
     <div class="rail" id="timeline">
+
+      <!-- Independent projects (same order as the Analyst CV) -->
+      <article class="relative pl-8 md:pl-32 pb-10" data-tags="automation">
+        <span class="node"></span>
+        <p class="rail-date">2026–now</p>
+        <details class="run rounded-xl border p-5 md:p-6" style="border-color: var(--line); background: var(--surface);">
+          <summary class="flex items-start justify-between gap-4">
+            <div class="min-w-0">
+              <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                <span class="pill pill-review">running</span>
+                <span class="font-mono text-xs md:hidden" style="color: var(--muted);">2026 – Present</span>
+              </div>
+              <h3 class="font-display font-semibold text-lg md:text-xl">Independent Projects</h3>
+              <p class="font-mono text-sm mt-0.5" style="color: var(--muted);">Self-directed QA and localization work</p>
+              <p class="product-line">Drake Arena · Stream Requests · The Wolf Among Us · Dressmaker</p>
+            </div>
+            <svg class="chev shrink-0 mt-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="mt-5 pt-5 border-t" style="border-color: var(--line);">
+            <ul class="space-y-2.5 leading-relaxed run-bullets" style="color: var(--muted);">
+              <li data-tags="automation"><strong>Drake Arena:</strong> designed the rules, reviewed every build and made automated tests mandatory for every change; they run in CI on every pull request.</li>
+              <li><strong>Stream Requests:</strong> defined the requirements and content rules for a song and video request app used live on a Twitch channel, and turned the streamer’s bug report into a fix release.</li>
+              <li><strong>The Wolf Among Us:</strong> led the English→Ukrainian localization of the whole game (~26,000 lines) and ran its in-game LQA, logging 150+ issues and making 1,000+ review decisions.</li>
+              <li><strong>Dressmaker:</strong> gathered the evidence that showed why parts of the Ukrainian translation didn’t appear, and verified each fix in-game and on the end user’s PC.</li>
+            </ul>
+            <p class="mt-4 font-mono text-xs"><a href="#projects" style="color: var(--accent-text);">Details and links in Projects ↓</a></p>
+          </div>
+        </details>
+      </article>
 
       <!-- Epic Games -->
       <article class="relative pl-8 md:pl-32 pb-10" data-tags="live-service">
@@ -1180,10 +1209,25 @@
         <li class="tier"><span class="gem"><span>1</span></span><h3>Game Tester</h3><p>Ubisoft Kyiv · 2019<br>Anno 1800 PC</p></li>
         <li class="tier"><span class="gem"><span>2</span></span><h3>Development QA</h3><p>Ubisoft Mainz · 2022<br>Anno 1800 console port</p></li>
         <li class="tier"><span class="gem"><span>3</span></span><h3>Senior QA Tester</h3><p>Epic Games · 2023<br>Fortnite</p></li>
-        <li class="tier next"><span class="gem"><span>4</span></span><h3>Locked</h3><p>Your studio · next</p></li>
+        <li class="tier"><span class="gem"><span>4</span></span><h3>Independent Projects</h3><p>Self-directed · 2026<br>Localization QA, Drake Arena</p></li>
+        <li class="tier next"><span class="gem"><span>5</span></span><h3>Locked</h3><p>Your studio · next</p></li>
       </ol>
 
       <div class="gv-quests">
+        <details class="gv-quest">
+          <summary>
+            <span class="gv-badge gv-badge-gold">Active</span>
+            <span class="gv-qhead"><span class="gv-qtitle">Independent Projects</span><span class="gv-qmeta">Self-directed QA and localization work · 2026 – Present</span></span>
+            <svg class="gv-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="gv-qnote">Details and links in <a href="#g-projects" style="color: var(--g-gold); text-decoration: underline;">Projects</a> below.</p>
+          <ul>
+            <li><b>The Wolf Among Us:</b> led the English→Ukrainian localization of the whole game (~26,000 lines across all five episodes) and ran its in-game LQA, logging 150+ issues and making 1,000+ review decisions.</li>
+            <li><b>Dressmaker:</b> gathered the evidence (Unity player log, in-game screenshots) that showed why parts of the translation didn’t appear, and verified each fix in-game and on the end user’s PC.</li>
+            <li><b>Drake Arena:</b> designed the rules and balance, reviewed every build and made automated tests mandatory; they run in CI on every pull request.</li>
+          </ul>
+        </details>
+
         <details class="gv-quest" open>
           <summary>
             <span class="gv-badge">Complete</span>
