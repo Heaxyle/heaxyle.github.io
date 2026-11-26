@@ -845,8 +845,8 @@
             Code; I own the game design, the balance tuning, the bug reviews and the test plan.
           </p>
           <ul class="space-y-2.5 leading-relaxed run-bullets text-sm mb-5" style="color: var(--muted);">
-            <li>Treated it like a production feature: reviewed each build, logging bugs and rule changes (13 in one review round), and requested test coverage for every change.</li>
-            <li>That coverage now runs in CI on every pull request: seeded simulations (tens of thousands of runs per build) behind a pass/fail gate, mutation testing that checks the suite catches deliberately injected bugs, and Playwright UI and layout checks in both languages.</li>
+            <li>Designed the rules, then ran it like a production feature: reviewed every build, logged bugs and rule changes (13 in one review round), and made automated tests mandatory for every change.</li>
+            <li>Those tests run in CI on every pull request: seeded simulations (tens of thousands of runs per build) behind a pass/fail gate, mutation testing that checks the suite catches all 255 injected bugs, and Playwright UI and layout checks in both languages.</li>
           </ul>
           <div class="missed">
             <p class="eyebrow mb-1.5" style="color: var(--fail);">The bug the tests missed</p>
@@ -886,7 +886,7 @@
           <p class="eyebrow mb-3">CI pipeline · every pull request</p>
           <ol class="pipeline">
             <li><span class="step-n">1</span><div><strong>Rule tests</strong><span>Effects, ultimates and fight rules play real turns and are checked against the game’s own tables.</span></div></li>
-            <li><span class="step-n">2</span><div><strong>Mutation testing</strong><span>68 deliberately planted bugs. The suite has to catch every one.</span></div></li>
+            <li><span class="step-n">2</span><div><strong>Mutation testing</strong><span>255 deliberately planted bugs. The suite has to catch every one.</span></div></li>
             <li><span class="step-n">3</span><div><strong>Balance gate</strong><span>Seeded simulations play about 24,000 fights. CI fails if any element matchup leaves the 40–60% win band.</span></div></li>
             <li><span class="step-n">4</span><div><strong>UI smoke test</strong><span>Headless Chromium drives the overlay through fake chat in both languages, on a paused clock.</span></div></li>
             <li><span class="step-n">5</span><div><strong>Layout and contrast</strong><span>1920×1080, worst-case names, web fonts blocked, Ukrainian and English.</span></div></li>
@@ -917,10 +917,48 @@
       </div>
     </article>
 
-    <!-- Dressmaker: Ukrainian fan localization -->
+    <!-- The Wolf Among Us: Ukrainian fan localization (translation private; public LQA case study) -->
     <article class="rounded-2xl border p-5 md:p-8 mb-8" style="border-color: var(--line); background: var(--surface);">
       <div class="flex flex-wrap items-center gap-2 mb-4">
-        <span class="pill pill-review">beta v0.9</span>
+        <span class="pill pill-pass">complete</span>
+        <span class="pill pill-review">public case study</span>
+        <span class="font-mono text-xs" style="color: var(--muted);">2026 · translation private per publisher policy</span>
+      </div>
+      <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-8 lg:gap-12">
+        <div class="min-w-0">
+          <h3 class="font-display font-bold text-xl md:text-2xl mb-3">The Wolf Among Us · Ukrainian localization</h3>
+          <p class="text-lg leading-snug mb-4">An unofficial Ukrainian fan localization of a whole commercial game on Steam: five episodes, tested in-game and reviewed line by line.</p>
+          <ul class="space-y-2.5 leading-relaxed run-bullets text-sm" style="color: var(--muted);">
+            <li>Led the English→Ukrainian localization of the whole game (~26,000 lines across all five episodes, menus and extras) and approved its ~150-term glossary; the final version is complete and fully playable.</li>
+            <li>Ran in-game LQA across the whole game with a custom capture tool, logging 150+ issues myself (broken line wrapping, cut-off text, untranslated screens), and made 1,000+ review decisions on flagged lines.</li>
+          </ul>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="chip">Localization QA</span><span class="chip">EN → UA</span><span class="chip">In-game LQA</span><span class="chip">Terminology glossary</span><span class="chip">Claude</span>
+          </div>
+        </div>
+        <div class="min-w-0">
+          <p class="eyebrow mb-3">From pilot to release</p>
+          <ol class="pipeline">
+            <li><span class="step-n">1</span><div><strong>Pilot</strong><span>One Episode 1 scene (222 lines) translated and checked in the game first, to settle the style.</span></div></li>
+            <li><span class="step-n">2</span><div><strong>Translate</strong><span>The whole game, ~26,000 lines, AI-generated and held to a 150-term glossary.</span></div></li>
+            <li><span class="step-n">3</span><div><strong>Check</strong><span>Coverage, text width, tags and leftover English checked on every build: 0 lines missing.</span></div></li>
+            <li><span class="step-n">4</span><div><strong>LQA</strong><span>150+ issues logged in-game with an F9 capture tool: screenshot, marked spot and a note.</span></div></li>
+            <li><span class="step-n">5</span><div><strong>Review</strong><span>1,030 decisions on flagged lines across seven review rounds.</span></div></li>
+            <li><span class="step-n">6</span><div><strong>Release</strong><span>8 pre-releases, each through a clean-install test.</span></div></li>
+          </ol>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs">
+        <a class="ext-link" href="https://github.com/Heaxyle/wolf-among-us-lqa" target="_blank" rel="noopener">LQA case study on GitHub ↗</a>
+        <a class="ext-link" href="https://github.com/Heaxyle/wolf-among-us-lqa/blob/main/docs/coverage.md" target="_blank" rel="noopener">Coverage by scene ↗</a>
+        <a class="ext-link" href="https://github.com/Heaxyle/wolf-among-us-lqa/blob/main/docs/release-test.md" target="_blank" rel="noopener">Release test ↗</a>
+      </div>
+    </article>
+
+    <!-- Dressmaker: Ukrainian fan localization -->
+    <article class="rounded-2xl border p-5 md:p-8" style="border-color: var(--line); background: var(--surface);">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="pill pill-review">beta v1.1</span>
         <span class="pill pill-review">public repo</span>
         <span class="font-mono text-xs" style="color: var(--muted);">2026 – present · LQA pass in progress</span>
       </div>
@@ -959,49 +997,6 @@
       </div>
     </article>
 
-    <!-- QA knowledge assistant -->
-    <article class="rounded-2xl border p-5 md:p-8" style="border-color: var(--line); background: var(--surface);">
-      <div class="flex flex-wrap items-center gap-2 mb-4">
-        <span class="pill pill-pass">shipped</span>
-        <span class="font-mono text-xs" style="color: var(--muted);">Local tool · runs on Ollama</span>
-      </div>
-      <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-8 lg:gap-12">
-        <div class="min-w-0">
-          <h3 class="font-display font-bold text-xl md:text-2xl mb-3">QA Knowledge Assistant</h3>
-          <p class="text-sm leading-relaxed mb-4" style="color: var(--muted);">
-            A local retrieval (RAG) tool that answers questions from test plans, specs and past bug reports, and cites
-            the source file on every answer. It runs on your own machine, so the documents never leave it. Built with AI
-            assistance for a friend’s support team, then adapted to QA docs.
-          </p>
-          <p class="text-sm leading-relaxed mb-5" style="color: var(--muted);">
-            Two searches run side by side: <strong style="color: var(--ink);">vector search</strong> for meaning, and
-            <strong style="color: var(--ink);">keyword search</strong> for exact hits like feature names, ticket IDs and
-            error codes. The results are merged and reranked before the model sees them. Answers come back in three parts:
-            known coverage from the docs, suggested edge cases, and a draft bug report when one fits.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">LangChain</span><span class="chip">ChromaDB</span><span class="chip">Ollama</span><span class="chip">Hybrid retrieval</span>
-          </div>
-        </div>
-        <div class="min-w-0">
-          <p class="eyebrow mb-3">Code excerpt · the hybrid retriever</p>
-          <div class="scrollbox rounded-lg" style="border: 1px solid var(--line); background: var(--surface-2);">
-            <pre class="p-4 text-xs font-mono leading-relaxed" style="color: var(--ink); min-width: 34rem;"><code>class NativeHybridRetriever(BaseRetriever):
-    """Merges vector + BM25 results, then reranks before handing to the LLM."""
-    def _get_relevant_documents(self, query, *, run_manager=None):
-        vec_docs = self.vector_retriever.invoke(query)
-        bm25_docs = self.bm25_retriever.invoke(query)
-
-        combined = {d.page_content: d for d in vec_docs + bm25_docs}
-        unique_docs = list(combined.values())
-
-        if self.reranker and unique_docs:
-            return self.reranker.compress_documents(unique_docs, query)[:self.top_n]
-        return unique_docs[:self.top_n]</code></pre>
-          </div>
-        </div>
-      </div>
-    </article>
   </div>
 </section>
 
@@ -1073,9 +1068,9 @@
           </tr>
           <tr>
             <td class="font-display font-medium">AI-assisted development</td>
-            <td><span class="chip">Claude / Claude Code</span> <span class="chip">LangChain</span> <span class="chip">ChromaDB</span> <span class="chip">Ollama</span></td>
+            <td><span class="chip">Claude / Claude Code</span></td>
             <td><span class="meter" aria-label="4 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td>
-            <td class="text-sm" style="color: var(--muted);">Directs AI-built tools and an AI-generated localization, and tests them like production features. See Projects.</td>
+            <td class="text-sm" style="color: var(--muted);">Directs AI-built tools and AI-generated localizations, and tests them like production features. See Projects.</td>
           </tr>
         </tbody>
       </table>
@@ -1254,8 +1249,8 @@
             <p class="gv-tagline">A Twitch chat auto-battler that runs as an OBS overlay.</p>
             <p class="gv-body">Viewers create a drake, pick one of six elements and join a ranked queue. Turn-based fights then play out on stream on their own: crits, armor, twelve buffs and debuffs, class ultimates and a sudden-death phase. It is a single HTML file with no build step and no backend, in English and Ukrainian. The code is written with Claude Code; I own the game design, the balance tuning, the bug reviews and the test plan.</p>
             <ul class="gv-bullets">
-              <li>Treated it like a production feature: reviewed each build, logging bugs and rule changes (13 in one review round), and requested test coverage for every change.</li>
-              <li>That coverage now runs in CI on every pull request: seeded balance simulations (tens of thousands of fights per run) behind a win-rate gate, mutation testing that checks the suite catches deliberately injected bugs, and Playwright UI and layout checks in both languages.</li>
+              <li>Designed the rules and balance, then ran it like a production feature: reviewed every build, logged bugs and rule changes (13 in one review round), and made automated tests mandatory for every change.</li>
+              <li>Those tests run in CI on every pull request: seeded balance simulations (tens of thousands of fights per run) behind a 40–60% win-rate gate, mutation testing that checks the suite catches all 255 injected bugs, and Playwright UI and layout checks in both languages.</li>
             </ul>
             <div class="gv-missed">
               <p class="gv-label" style="color: var(--g-fail);">The bug the tests missed</p>
@@ -1287,7 +1282,7 @@
             <p class="gv-label">CI pipeline · every pull request</p>
             <ol class="gv-pipeline">
               <li><span class="gem gem-sm"><span>1</span></span><div><strong>Rule tests</strong><span>Effects, ultimates and fight rules play real turns and are checked against the game’s own tables.</span></div></li>
-              <li><span class="gem gem-sm"><span>2</span></span><div><strong>Mutation testing</strong><span>68 deliberately planted bugs. The suite has to catch every one.</span></div></li>
+              <li><span class="gem gem-sm"><span>2</span></span><div><strong>Mutation testing</strong><span>255 deliberately planted bugs. The suite has to catch every one.</span></div></li>
               <li><span class="gem gem-sm"><span>3</span></span><div><strong>Balance gate</strong><span>Seeded simulations play about 24,000 fights. CI fails if any element matchup leaves the 40–60% win band.</span></div></li>
               <li><span class="gem gem-sm"><span>4</span></span><div><strong>UI smoke test</strong><span>Headless Chromium drives the overlay through fake chat in both languages, on a paused clock.</span></div></li>
               <li><span class="gem gem-sm"><span>5</span></span><div><strong>Layout and contrast</strong><span>1920×1080, worst-case names, web fonts blocked, Ukrainian and English.</span></div></li>
@@ -1305,7 +1300,37 @@
       </article>
 
       <article class="gv-panel">
-        <div class="gv-tags"><span class="gv-badge gv-badge-gold">Beta v0.9</span><span class="gv-badge gv-badge-line">Public repo</span><span class="gv-small" style="margin:0;">LQA pass in progress</span></div>
+        <div class="gv-tags"><span class="gv-badge gv-badge-gold">Complete</span><span class="gv-badge gv-badge-line">Public case study</span><span class="gv-small" style="margin:0;">Translation private per publisher policy</span></div>
+        <div class="gv-two">
+          <div class="min-w-0">
+            <h3 class="gv-h3">The Wolf Among Us</h3>
+            <p class="gv-tagline">Unofficial Ukrainian fan localization of the whole game, all five episodes, tested in-game and reviewed line by line.</p>
+            <ul class="gv-bullets">
+              <li>Led the English→Ukrainian localization of the whole game (~26,000 lines across all five episodes, menus, the Book of Fables and Extras) and approved its ~150-term glossary; the final version is complete and fully playable.</li>
+              <li>Ran in-game LQA across the whole game with a custom capture tool, logging 150+ issues myself (mid-word line breaks, cut-off text, untranslated screens), and made 1,000+ review decisions on flagged lines.</li>
+            </ul>
+          </div>
+          <div class="min-w-0">
+            <p class="gv-label">From pilot to release</p>
+            <ol class="gv-pipeline">
+              <li><span class="gem gem-sm"><span>1</span></span><div><strong>Pilot</strong><span>One Episode 1 scene (222 lines) translated and checked in the game first, to settle the style.</span></div></li>
+              <li><span class="gem gem-sm"><span>2</span></span><div><strong>Translate</strong><span>The whole game, ~26,000 lines, AI-generated and held to a 150-term glossary.</span></div></li>
+              <li><span class="gem gem-sm"><span>3</span></span><div><strong>Check</strong><span>Coverage, text width, tags and leftover English checked on every build: 0 lines missing.</span></div></li>
+              <li><span class="gem gem-sm"><span>4</span></span><div><strong>LQA</strong><span>150+ issues logged in-game with an F9 capture tool: screenshot, marked spot and a note.</span></div></li>
+              <li><span class="gem gem-sm"><span>5</span></span><div><strong>Review</strong><span>1,030 decisions on flagged lines across seven review rounds.</span></div></li>
+              <li><span class="gem gem-sm"><span>6</span></span><div><strong>Release</strong><span>8 pre-releases, each through a clean-install test.</span></div></li>
+            </ol>
+          </div>
+        </div>
+        <div class="gv-links">
+          <a href="https://github.com/Heaxyle/wolf-among-us-lqa" target="_blank" rel="noopener">LQA case study on GitHub ↗</a>
+          <a href="https://github.com/Heaxyle/wolf-among-us-lqa/blob/main/docs/coverage.md" target="_blank" rel="noopener">Coverage by scene ↗</a>
+          <a href="https://github.com/Heaxyle/wolf-among-us-lqa/blob/main/docs/release-test.md" target="_blank" rel="noopener">Release test ↗</a>
+        </div>
+      </article>
+
+      <article class="gv-panel">
+        <div class="gv-tags"><span class="gv-badge gv-badge-gold">Beta v1.1</span><span class="gv-badge gv-badge-line">Public repo</span><span class="gv-small" style="margin:0;">LQA pass in progress</span></div>
         <div class="gv-two">
           <div class="min-w-0">
             <h3 class="gv-h3">Dressmaker</h3>
@@ -1335,32 +1360,6 @@
           <a href="https://github.com/Heaxyle/dressmaker-ukrainian/blob/main/docs/glossary.md" target="_blank" rel="noopener">Terminology glossary ↗</a>
         </div>
       </article>
-
-      <article class="gv-panel">
-        <div class="gv-tags"><span class="gv-badge">Shipped</span><span class="gv-small" style="margin:0;">Local tool · runs on Ollama</span></div>
-        <div class="gv-two">
-          <div class="min-w-0">
-            <h3 class="gv-h3">QA Knowledge Assistant</h3>
-            <p class="gv-body">A local retrieval (RAG) tool that answers questions from test plans, specs and past bug reports, and cites the source file on every answer. It runs on your own machine, so the documents never leave it. Built with AI assistance for a friend’s support team, then adapted to QA docs.</p>
-            <p class="gv-body">Vector search finds meaning; keyword search finds exact hits like feature names, ticket IDs and error codes. Results are merged and reranked before the model sees them.</p>
-          </div>
-          <div class="min-w-0">
-            <p class="gv-label">Code excerpt · the hybrid retriever</p>
-            <div class="gv-code"><pre><code>class NativeHybridRetriever(BaseRetriever):
-    """Merges vector + BM25 results, then reranks before handing to the LLM."""
-    def _get_relevant_documents(self, query, *, run_manager=None):
-        vec_docs = self.vector_retriever.invoke(query)
-        bm25_docs = self.bm25_retriever.invoke(query)
-
-        combined = {d.page_content: d for d in vec_docs + bm25_docs}
-        unique_docs = list(combined.values())
-
-        if self.reranker and unique_docs:
-            return self.reranker.compress_documents(unique_docs, query)[:self.top_n]
-        return unique_docs[:self.top_n]</code></pre></div>
-          </div>
-        </div>
-      </article>
     </section>
 
     <!-- Loadout (skills) -->
@@ -1373,7 +1372,7 @@
         <div class="gv-slot"><div class="gv-slot-head"><h3>Platforms</h3><span class="gv-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p>Windows PC, PS4, PS5, Xbox One, Xbox Series X|S, Nintendo Switch, Android, iOS, Amazon Luna (cloud). PlayStation, Xbox and Switch dev kits.</p></div>
         <div class="gv-slot"><div class="gv-slot-head"><h3>Tools</h3><span class="gv-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p>Unreal Editor, JIRA, TestRail, QMetry, Confluence, Perforce (P4V), Jenkins.</p></div>
         <div class="gv-slot"><div class="gv-slot-head"><h3>Leadership &amp; process</h3><span class="gv-bar" aria-label="5 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p>Agile/Scrum, sub-team leadership, onboarding and mentoring, external QA vendor coordination, QA status and risk reporting.</p></div>
-        <div class="gv-slot"><div class="gv-slot-head"><h3>AI-assisted development</h3><span class="gv-bar" aria-label="4 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div><p>Claude, Claude Code, LangChain, ChromaDB, Ollama. Directs AI-built tools and an AI-generated localization, and tests them like production features.</p></div>
+        <div class="gv-slot"><div class="gv-slot-head"><h3>AI-assisted development</h3><span class="gv-bar" aria-label="4 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div><p>Claude, Claude Code. Directs AI-built tools and AI-generated localizations, and tests them like production features.</p></div>
         <div class="gv-slot"><div class="gv-slot-head"><h3>Automation</h3><span class="gv-bar" aria-label="2 out of 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div><p>Python (PyAutoGUI) UI verification script; record/playback gameplay automation run in Jenkins CI. Original scripting goes through AI assistance.</p></div>
         <div class="gv-slot"><div class="gv-slot-head"><h3>Currently learning</h3><span class="gv-badge gv-badge-line">In progress</span></div><p>Playwright (Python/pytest), Postman, SQL, GitHub Actions.</p></div>
       </div>
