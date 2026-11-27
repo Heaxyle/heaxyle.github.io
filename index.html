@@ -734,10 +734,10 @@
           </summary>
           <div class="mt-5 pt-5 border-t" style="border-color: var(--line);">
             <ul class="space-y-2.5 leading-relaxed run-bullets" style="color: var(--muted);">
-              <li data-tags="automation"><strong>Drake Arena</strong>, a battle game for Twitch streams: viewers join from chat, and their drakes fight in an overlay on the stream. I designed the rules, reviewed every build and required automated tests for every change, run in CI on every pull request.</li>
+              <li data-tags="automation"><strong>Drake Arena</strong>, a battle game for Twitch streams: viewers join from chat, and their drakes fight in an overlay on the stream. I designed the rules and reviewed every build. Every change has to pass automated tests in CI before it merges.</li>
               <li><strong>Stream Requests</strong>, a Windows app for Twitch streams: viewers request songs and videos with channel points or donations, and the app checks, queues and plays them on stream. I defined the requirements and content rules, and turned the streamer’s bug report into a fix release.</li>
               <li><strong>The Wolf Among Us</strong>, an unofficial Ukrainian translation of Telltale’s whole game: five episodes, ~26,000 lines. I led the localization and ran its in-game LQA, logging 150+ issues and making 1,000+ review decisions.</li>
-              <li><strong>Dressmaker</strong>, an unofficial Ukrainian translation of a cozy sewing game on Steam (~6,400 strings). I gathered the evidence that showed why parts of the translation didn’t appear, and verified each fix in-game and on the end user’s PC.</li>
+              <li><strong>Dressmaker</strong>, an unofficial Ukrainian translation of a cozy sewing game on Steam (~6,400 strings). I filed 50+ bugs, made 500 review decisions, and gathered the evidence that showed why parts of the translation didn’t appear.</li>
             </ul>
             <p class="mt-4 font-mono text-xs"><a href="#projects" style="color: var(--accent-text);">Details and links in Projects ↓</a></p>
           </div>
@@ -998,7 +998,7 @@
           <ul class="space-y-2.5 leading-relaxed run-bullets text-sm" style="color: var(--muted);">
             <li>Directed and tested an AI-generated EN→UA translation of ~6,400 strings (UI, tutorial, items, dialogue, ~550 pattern-piece names), using a terminology glossary and grammatical-gender rules, with placeholders and rich-text tags validated across every string.</li>
             <li>Gathered the evidence (application logs, in-game screenshots) that pinned down why parts of the translation didn’t appear: an unreadable re-saved data bundle, an integrity check rejecting modified files, and strings stored outside the localization tables; verified each fix in-game and on the end user’s PC.</li>
-            <li>Published it as patch scripts only (no game files distributed), with install/uninstall scripts and automatic backups; now running the LQA pass with a native-speaker playtester, using a bilingual bug-report template with category and severity fields.</li>
+            <li>Filed 50+ bugs and made 500 review decisions in LQA with a native-speaker playtester, using a bilingual bug-report template (category, severity); published it as patch scripts only, with install/uninstall and automatic backups.</li>
           </ul>
           <div class="mt-5 flex flex-wrap gap-2">
             <span class="chip">Localization QA</span><span class="chip">EN → UA</span><span class="chip">Terminology glossary</span><span class="chip">Unity</span><span class="chip">Python</span><span class="chip">Claude</span>
@@ -1223,8 +1223,8 @@
           <p class="gv-qnote">Details and links in <a href="#g-projects" style="color: var(--g-gold); text-decoration: underline;">Projects</a> below.</p>
           <ul>
             <li><b>The Wolf Among Us</b>, an unofficial Ukrainian translation of Telltale’s whole game: five episodes, ~26,000 lines. I led the localization and ran its in-game LQA, logging 150+ issues and making 1,000+ review decisions.</li>
-            <li><b>Dressmaker</b>, an unofficial Ukrainian translation of a cozy sewing game on Steam, built in Unity 6 (~6,400 strings). I gathered the evidence (Unity player log, in-game screenshots) that showed why parts of the translation didn’t appear, and verified each fix in-game and on the end user’s PC.</li>
-            <li><b>Drake Arena</b>, a battle game for Twitch streams: viewers join from chat, and their drakes fight in an overlay on the stream. I designed the rules and balance, reviewed every build and required automated tests for every change, run in CI on every pull request.</li>
+            <li><b>Dressmaker</b>, an unofficial Ukrainian translation of a cozy sewing game on Steam, built in Unity 6 (~6,400 strings). I filed 50+ bugs, made 500 review decisions, and gathered the evidence (Unity player log, in-game screenshots) that showed why parts of the translation didn’t appear.</li>
+            <li><b>Drake Arena</b>, a battle game for Twitch streams: viewers join from chat, and their drakes fight in an overlay on the stream. I designed the rules and balance and reviewed every build. Every change has to pass automated tests in CI before it merges.</li>
           </ul>
         </details>
 
@@ -1382,7 +1382,7 @@
             <ul class="gv-bullets">
               <li>Directed and tested an AI-generated EN→UA translation of ~6,400 strings (UI, tutorial, items, dialogue, ~550 pattern-piece names), using a terminology glossary and grammatical-gender rules, with placeholders and rich-text tags validated across every string.</li>
               <li>Gathered the evidence (Unity player log, in-game screenshots) that pinned down why parts of the translation didn’t appear: an unreadable re-saved bundle, a catalog integrity check, and strings stored outside the localization tables; verified each fix in-game and on the end user’s PC.</li>
-              <li>Published it as patch scripts only (no game files distributed), with install/uninstall scripts and automatic backups; now running the LQA pass with a native-speaker playtester, using a bilingual bug-report template with category and severity fields.</li>
+              <li>Filed 50+ bugs and made 500 review decisions in LQA with a native-speaker playtester, using a bilingual bug-report template (category, severity); published it as patch scripts only, with install/uninstall and automatic backups.</li>
             </ul>
           </div>
           <div class="min-w-0">
